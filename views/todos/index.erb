@@ -1,1 +1,19 @@
-<img src="/img/glhf.png">
+<h1>Todolistan</h1> 
+<a href="/todos/new">Ny todo</a> 
+<ul>
+  <% @todos.each do |todo| %>
+    <% 
+        status = "Inte klar"
+        if todo['completed'] == 1
+            status = "Klar"
+        end
+    %>
+
+    <li>
+    <h2><a href="/todos/<%= todo['id'] %>"><%= todo['name'] %></a></h2>
+    <p> <%= todo['description'] %> </p>
+    <p> <%= status %> </p>
+    </li>
+  <% end %>
+</ul>
+

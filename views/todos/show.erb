@@ -1,0 +1,13 @@
+<h1><%= @todo['name'] %></h1>
+<p><%= @todo['description'] %></p>
+
+<%
+    status = "Inte klar"
+    if @todo['completed'] == 1
+        status = "Klar"
+    end
+%>
+<p><%= status %></p>
+
+<a href="/todos">Tillbaka</a>
+
